@@ -26,7 +26,7 @@ Windows上でGUI画面をコンテナから転送・表示させるため、あ�
 ターミナル（PowerShell等）を開き、プロジェクトをクローンして移動します。
 
 ```bash
-git clone https://github.com/あなたのユーザー名/warden_poc.git
+git clone https://github.com/sato0815/warden_poc.git
 cd warden_poc
 ```
 
