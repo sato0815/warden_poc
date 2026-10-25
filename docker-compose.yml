@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  gateway:
+    build: .
+    container_name: warden_gateway
+    command: python gateway_gui.py
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+    ports:
+      - "50007:50007"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  collar:
+    build: .
+    container_name: warden_collar
+    command: python warden_collar.py
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+      - SERVER_HOST=host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - gateway
