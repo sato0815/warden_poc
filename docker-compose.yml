@@ -14,7 +14,7 @@ services:
 
   collar:
     build: .
-    container_name: warden_collar
+    # container_name: warden_collar
     command: python warden_collar.py
     environment:
       - DISPLAY=host.docker.internal:0.0
